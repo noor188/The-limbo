@@ -3,7 +3,6 @@
     background-color:#e6e6e6;
     font-family:Oswald;
 }
-
 /*Header include DarkModeswitch and Menu*/
 
 /***************DarkModeswitch*****************/
@@ -232,7 +231,7 @@ li > a:only-child:after { content: ''; }
     display: -moz-box;         
     display: -ms-flexbox;      
     display: -webkit-flex;
-    min-height: 65%;    
+    min-height: 58%;    
     display: flex;
     overflow: auto;     
 }
@@ -241,24 +240,24 @@ li > a:only-child:after { content: ''; }
 {
     -webkit-box-flex: 1;     
     -moz-box-flex: 1;         
-    width: 40%;               
+    width: 30%;               
     -webkit-flex: 1;         
     -ms-flex: 1;             
     flex: 1;                  
     text-align: center;
-    
+    background-color:#778899;
 }
 
 .middle-right
 {
     -webkit-box-flex: 2;     
     -moz-box-flex: 2;         
-    width: 60%;               
+    width: 70%;               
     -webkit-flex: 2;         
     -ms-flex: 2;             
     flex: 2;                  
     text-align: center;
-    
+    background-color: purple;
 }
 
 .middle-left
@@ -344,51 +343,174 @@ input[type=submit]:hover {
 #time
 {
     cursor: pointer;
+    width: 130px; 
+    height: 130px;
     margin-inline-start: 60px;
     margin-inline-end: 50px;
     transition-duration: 0.4s;
 }
 
 #time:hover {
-    background-color: red;
+    
     color: white;
+    
 }
 
 #acts
 {
     cursor: pointer;
+    width: 130px; 
+    height: 130px;
     margin-inline-start: 60px;
     margin-inline-end: 50px;
     transition-duration: 0.4s;
 }
 
 #acts:hover {
-    background-color: red;
+    
     color: white;
 }
 
 #words
 {
     cursor: pointer;
+    width: 130px; 
+    height: 130px;
     margin-inline-start: 60px;
     margin-inline-end: 50px;
     transition-duration: 0.4s;
 }
 
 #words:hover {
-    background-color: red;
+    
     color: white;
 }
 
 #gifts
 {
     cursor: pointer;
+    width: 130px; 
+    height: 130px;
     margin-inline-start: 60px;
     margin-inline-end: 50px;
     transition-duration: 0.4s;
 }
 
 #gifts:hover {
-    -webkit-filter : hue-rotate(180deg);
-    filter : hue-rotate(180deg);
+
+    color: white;
+}
+
+
+
+#rounded_btn
+{
+    font-size: 20px;
+    color: white;
+    font-family: Oswald;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 80px;
+    border-radius: 40px;
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: #778899;
+    transition-duration: 0.4s;
+}
+
+#rounded_btn:hover {
+    background-color: #F08080;
+    color: white;
+}
+
+#p1
+{
+    font-family: Oswald;
+    font-size: 24px;
+    margin-top: 30%; 
+    padding: 20px;
+    color: white;  
+}
+
+#p2
+{
+    font-family: Oswald;
+    font-size: 24px;
+    margin-top: 0px;
+    color: black;   
+}
+
+#PRI
+{ 
+    text-align: unset;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+#button
+{
+    float: left;
+    font-size: 20px;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 3px;
+    border: 1px solid #6495ED;
+    cursor: pointer;
+    background-color: whitesmoke;
+    transition-duration: 0.4s;
+}
+
+#button:hover {
+    background-color: #6495ED;
+    color: white;
+}
+
+
+
+
+/**********************************************/
+.middle{
+    
+    max-height: 85%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    overflow: scroll;   
+}
+
+/**********************************************/
+.leftcontent{
+    width : 50%;
+    height: 84.1vh;
+    float : left;
+}
+
+/**********************************************/
+.rightcontent{
+    width : 45%;
+    height: 84.1vh;
+    float : left;
+    overflow: scroll;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    
+}
+
+#M_R
+{
+    height: auto;
+    width: auto;
+    max-height: 550px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
