@@ -1,0 +1,76 @@
+<html lang="en" dir="ltr">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="../style.css">
+        <title></title>
+    </head>
+
+    <body class= "body">
+        <nav>
+            <div id="dmswitch">Dark mode<br/>
+                <label style="margin-top: 0px; " class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu" >
+                <li><a href="../index.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
+            </ul>
+        </nav>
+        
+        <div class="middle">
+            <div class="container">
+                <div style="text-align:center; font-size:40px;
+                padding-top:0%; padding-bottom:2%;"> LET'S GET IN TOUCH 
+                </div>
+                <form >
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name..">
+
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="Your E-mail..">
+
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Your Phone..">
+                            
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+                            
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+     
+        <div id="footer">
+
+        </div>
+        <!-----------------Dark Mode----------------------->
+        <script>document.getElementById("Input")
+            .addEventListener("click",function(event) {
+            if (event.target.value === "OFF") {
+                var element = document.body;
+                element.classList.toggle("dark");
+                event.target.value = "ON";
+            }
+            else {
+                var element = document.body;
+                element.classList.toggle("dark");
+                event.target.value = "OFF";
+                }
+                },
+                false
+                );
+        </script>
+
+    </body>
+
+</html>
