@@ -1,0 +1,166 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="../style.css">
+        <script src= '../socket.io/socket.io.js'></script>
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
+    </head>
+
+<body  class="body" >
+    
+    <audio id="music1">
+        <source src="../music/Login.mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="music2">
+        <source src="../music/Combat.mp3">
+        Your browser does not support the audio element.
+      </audio>
+   
+        <nav>
+            <div id="dmswitch">Dark mode<br/>
+                <label style="margin-top: 0px; " class="switch">
+                    <input type="checkbox" id="Dark" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu" >
+                <li><a href="../index.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
+            </ul>
+        </nav>
+        
+        <div class="middle" >
+
+        <div class="leftcontent">
+            <h1>
+                Breaking the Habit of Love Addiction
+            </h1>
+            <p id="PRI">
+                By Dr. Annie Tanasugarn
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I1.jpg">
+            <P id="PRI">
+                Our relationships are mirror images of who we are. 
+                They reflect how we think and feel about ourselves. 
+                What we were taught in childhood is often carried with us through…
+            </P>
+            <a href="File/QUIZZ.html" id="button" onclick="myFunction()" >Read more</a>
+            <br/><br/><br/><br/><br/>
+
+            <h1>
+                Those Springtime Cheating Hearts
+            </h1>
+            <p id="PRI">
+                By Marie Hartwell-Walker, Ed.D.
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I2.jpg">
+            <P id="PRI">
+                “Spring is nature’s way of saying, ‘Let’s party!’” 
+                – Robin Williams Spring has sprung. Days are getting longer, 
+                sunnier, and warmer. While winter in colder climes can drive people indoors…
+            </P>
+            <a href="File/QUIZZ.html" id="button" >Read more</a>
+            <br/><br/><br/><br/><br/>
+
+            <h1>
+                The Secret Weapon That Will Improve All of Your Relationships
+            </h1>
+            <p id="PRI">
+                By Les Parrott, PhD
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I3.jpg">
+            <P id="PRI">
+                Prior to 1960, the residents of the little town of Roseto,
+                Pennsylvania, had superpowers. 
+                Roseto was highly resistant to the biggest killer in the United States. 
+                Even today, it accounts for…
+            </P>
+            <a href="File/QUIZZ.html" id="button" >Read more</a>
+            <br/><br/><br/><br/><br/>
+
+            <h1>
+                It’s Not Just Who You Are — But Who You’re With
+            </h1>
+            <p id="PRI">
+                By Lynn Margolies, Ph.D.
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I4.jpg">
+            <P id="PRI">
+                Many people seek partners based on a list of qualifications
+                or instinctive attraction to certain types. These approaches,
+                though popular, do not consider the flavor that will emerge, when features…
+            </P>
+            <a href="File/QUIZZ.html" id="button" >Read more</a>
+            <br/><br/><br/><br/><br/>
+
+            <h1>
+                Kicking Toxic Love
+            </h1>
+            <p id="PRI">
+                By Jessie Monreal, CADC
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I5.jpg">
+            <P id="PRI">
+                The last man that used the words “I love you” used them to control me.
+                He used them by not saying it back, ever, when I said it.  He used…
+            </P>
+            <a href="File/QUIZZ.html" id="button" >Read more</a>
+            <br/><br/><br/><br/><br/>
+
+            <h1>
+                Overcoming Savior Behavior
+            </h1>
+            <p id="PRI">
+                By Edie Weinstein, MSW, LSW
+            </p>
+            <img  src="../Image/RELATIONSHIP/R_I6.jpg">
+            <P id="PRI">
+                As a therapist working with clients who express having 
+                codependent tendencies, as well as being a recovering Type A workaholic 
+                and codependent who entered treatment in 1993, I am well…
+            </P>
+            <a href="File/QUIZZ.html" id="button" >Read more</a>
+            <br/><br/><br/><br/>
+        </div>
+
+        <div class="rightcontent">
+
+        </div>
+            
+
+        </div>
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Dark").addEventListener("click",function(event){
+                if (event.target.value === "OFF")
+                {
+                    //document.getElementById("main-left").style.backgroundColor = "black";
+                    var element = document.body;
+                    element.classList.toggle("dark");
+                    event.target.value = "ON";
+                }
+                else
+                {
+                    //document.getElementById("main-left").style.backgroundColor = "brown";
+                    var element = document.body;
+                    element.classList.toggle("dark");
+                    event.target.value = "OFF";
+                }
+            },false);
+        </script>
+      
+    </body>
+
+</html>
