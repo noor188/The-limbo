@@ -1,0 +1,77 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="../client.js"></script>
+        <title></title>
+    </head>
+
+<body id="Fbody" class= "body" >
+    
+        <nav >
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu"  >
+                <li><a href="../index.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div class="flexbox-container" >
+            
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide_quiz" >
+                <img class='test' src="../Image/Couple.jpg" onClick="location.href='../index.html'" />
+                <div class="text-block-left">
+                    <p style="font-size: 40px; font-weight: bold;">Begin Couple's Quiz</p>
+                  </div>
+            </div>
+
+            
+
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_RightSide_quiz" >
+                <img class='test' src="../Image/Singles.jpg" />
+                <div class="text-block-right">
+                    <p style="font-size: 40px; font-weight: bold;">Begin Singles Quiz</p>
+                  </div>
+            </div>
+            
+        </div>
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Input").addEventListener("click",function(event){
+                if(document.getElementById("Input").value == "OFF")
+                {
+                    document.getElementById("Input").value = "ON"
+                    document.getElementById("ML").style.backgroundColor = "black";
+                    document.getElementById("MB1").style.backgroundColor = "black";
+                    document.getElementById("MB2").style.color = "white";
+                    document.getElementById("Fbody").style.backgroundColor = "black";
+                }
+                else if(document.getElementById("Input").value == "ON")
+                {
+                    document.getElementById("Input").value = "OFF"
+                    document.getElementById("ML").style.backgroundColor = "#778899";
+                    document.getElementById("Fbody").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB1").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB2").style.color = "black";
+                }
+            });
+        </script>
+      
+    </body>
+
+</html>
