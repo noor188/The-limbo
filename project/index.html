@@ -9,11 +9,11 @@
         <title></title>
     </head>
 
-<body class= "body" >
+<body id="Fbody" class= "body" >
     
-        <nav>
-            <div id="dmswitch">Dark mode<br/>
-                <label style="margin-top: 0px; " class="switch">
+        <nav >
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
                     <input type="checkbox" id="Input" value="OFF" >
                     <span class="slider round"></span>
                 </label>
@@ -21,7 +21,7 @@
           
             <label for="drop" class="toggle" >Menu</label>
             <input type="checkbox" id="drop" />
-            <ul class="menu" >
+            <ul class="menu"  >
                 <li><a href="index.html" >HOME</a></li>
                 <li><a href="File/QUIZZ.html" >QUIZ</a></li>
                 <li><a href="File/RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
@@ -29,26 +29,32 @@
             </ul>
         </nav>
 
-        <div class="whole-middlepage" >
+        <div class="flexbox-container" >
             
-            <section class="middle-left" >
-                <P id="p1" >
-                    Discover the secret that has helped millions of people strengthen and improve their relationships. Take the quiz to get started.
+            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >
+                
+                <div class="Item_Inside_InMiddlePage_LeftSide">
 
-                </P>
-                <br/>
-                <a href="File/QUIZZ.html" id="rounded_btn">START HERE</a>
+                    <div id="p1" class="item item-1">
+                        Discover the secret that has helped millions of people strengthen and improve their relationships. Take the quiz to get started.
+                    </div>
 
-            </section>
+                    <div class="item item-2 Start_button_container">
+                        
+                        <input class="rounded_btn" type="button" value="START HERE" onClick="location.href='File/QUIZZ.html'">
+                     
+                    </div>
+                </div>
+            </div>
 
-            <section  class="middle-right" >
-                <img id="M_R" src="Image/banner_3.jpg">
-
-            </section>
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_RightSide" >
+                <img id='M_R' src="Image/banner_3.jpg" /> 
+            </div>
             
         </div>
 
-        <div id="middle-bottom">
+
+        <div id="MB1" class="middle-bottom">
             
             <img id="time" src="Image/time1.png" alt="Smiley face" onclick="change1() , time()" >
             <img id="acts" src="Image/acts1.png" alt="Smiley face" onclick="change2() , acts()" >
@@ -56,7 +62,7 @@
             <img id="gifts" src="Image/gifts1.png" alt="Smiley face" onclick="change4() , gifts()" >   
 
         </div>
-        <P id="p2">
+        <P  id="MB2" class="p2">
             Improve Your Relationships One Language At A Time
         </P>
 
@@ -64,19 +70,23 @@
         <!-----------------Dark Mode----------------------->
         <script>
             document.getElementById("Input").addEventListener("click",function(event){
-                if (event.target.value === "OFF")
+                if(document.getElementById("Input").value == "OFF")
                 {
-                    var element = document.body;
-                    element.classList.toggle("dark");
-                    event.target.value = "ON";
+                    document.getElementById("Input").value = "ON"
+                    document.getElementById("ML").style.backgroundColor = "black";
+                    document.getElementById("MB1").style.backgroundColor = "black";
+                    document.getElementById("MB2").style.color = "white";
+                    document.getElementById("Fbody").style.backgroundColor = "black";
                 }
-                else
+                else if(document.getElementById("Input").value == "ON")
                 {
-                    var element = document.body;
-                    element.classList.toggle("dark");
-                    event.target.value = "OFF";
+                    document.getElementById("Input").value = "OFF"
+                    document.getElementById("ML").style.backgroundColor = "#778899";
+                    document.getElementById("Fbody").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB1").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB2").style.color = "black";
                 }
-            },false);
+            });
         </script>
       
     </body>
