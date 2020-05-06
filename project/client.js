@@ -111,11 +111,11 @@ function time()
 
   if(image_tracker5 == 'default')
   {
-    image.src = 'Image/banner_2.jpg';
+    image.src = 'Image/Quality_Time.png';
     image_tracker5 = 'changed';
   }
   else{
-    image.src='Image/banner_2.jpg';
+    image.src='Image/Quality_Time.png';
   
   }
 }
@@ -126,11 +126,11 @@ function acts()
 
   if(image_tracker6=='default')
   {
-    image.src='Image/banner_1.jpg';
+    image.src='Image/Acts_of_Service.png';
     image_tracker6='changed';
   }
   else{
-    image.src='Image/banner_1.jpg';
+    image.src='Image/Acts_of_Service.png';
   }
 }
 
@@ -140,11 +140,11 @@ function words()
 
   if(image_tracker7=='default')
   {
-    image.src='Image/banner_2.jpg';
+    image.src='Image/Words_of_Affirmation.png';
     image_tracker7='changed';
   }
   else{
-    image.src='Image/banner_2.jpg';
+    image.src='Image/Words_of_Affirmation.png';
     
   }
 }
@@ -155,11 +155,11 @@ function gifts()
 
   if(image_tracker8=='default')
   {
-    image.src='Image/banner_3.jpg';
+    image.src='Image/Receiving_Gifts.png';
     image_tracker8='changed';
   }
   else{
-    image.src='Image/banner_3.jpg';
+    image.src='Image/Receiving_Gifts.png';
   }
 }
 
