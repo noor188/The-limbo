@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login | Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />    
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="client.js"></script>
+</head>
+<body id="Fbody" class= "body">
+        <div class="log_out">
+            <a href = "/logout"> Log out </a> 
+        </div>   
+        <nav>
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu" >
+                <li><a href="/secret" >HOME</a></li>
+                <li><a href="/QUIZZ" >QUIZ</a></li>
+                <li><a href="/RELATIONSHIP_ISSUES_secret" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="/CONTACT_US_secret" >CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div class="flexbox-container" >
+            
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide_quiz" >
+                <img class='pic' src="../Image/Couple.jpg" onClick="location.href='Preview1.html'" />
+                <div class="text-block-left">
+                    <p style="font-size: 40px; font-weight: bold;">Begin Couple's Quiz</p>
+                  </div>
+            </div>
+
+            
+
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_RightSide_quiz" >
+                <img class='pic' src="../Image/Singles.jpg" onClick="location.href='Preview2.html'" />
+                <div class="text-block-right">
+                    <p style="font-size: 40px; font-weight: bold;">Begin Singles Quiz</p>
+                  </div>
+            </div>
+            
+        </div>
+
+        
+
+        
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Input").addEventListener("click",function(event){
+                if (event.target.value === "OFF")
+                {
+                    var element = document.body;
+                    element.classList.toggle("dark");
+                    event.target.value = "ON";
+                }
+                else
+                {
+                    var element = document.body;
+                    element.classList.toggle("dark");
+                    event.target.value = "OFF";
+                }
+            },false);
+        </script>
+      
+    </body>
+</html>
+
+
+
+
+
+	
