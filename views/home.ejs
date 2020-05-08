@@ -92,10 +92,12 @@
 		                    <!-----------------login-----------------------> 
 		                    <form class="login-form" action="/login" method="POST">
 		                        <p>Log in to start the quiz</p>
-		                        <input type="text" name="username" placeholder="username">
-		                        <input type="password" name="password" placeholder="password">
-		                        <button class="create">login</button>
-		                        <p class="message">Not Registered? <a href="#"> Register</a></p>
+		                        <div class="info">
+			                        <input type="text" name="username" placeholder="username">
+			                        <input type="password" name="password" placeholder="password">
+			                        <button class="create">login</button>
+			                        <p class="message">Not Registered? <a href="#"> Register</a></p>
+		                        </div>
 		                        <!-----------------google sign in----------------------->  
 		                        <div id="button_position">
 		                            <a href="./auth/google" >Sign in with google<img src="/Image/googleButton.png"></a>

@@ -182,6 +182,11 @@ function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
+
+    if((passport.authenticate('google', {failureRedirect: '/' }))){
+        return next();
+    }
+    
     // if user not loged in
     res.redirect("/");
 }
