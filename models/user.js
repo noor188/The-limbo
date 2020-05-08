@@ -5,6 +5,10 @@ const findOrCreate = require('mongoose-findorcreate')
 var UserSchema= new mongoose.Schema({
 	username: String,
 	password: String,
+	gender: String,
+	email: String,
+	loved_one_email:String,
+	agree: String,
 	googleId: { type: String },
   	googleProfile: { type: Object },
   	googleAccessToken: {type: String}

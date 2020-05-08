@@ -91,7 +91,7 @@ app.post("/register", function(req, res){
 	// pass user object then the password separetly  
 	//if everthing goes well it will return  a new user 
 	//	that has everything inside of it (user name + password)
-    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+    User.register(new User({username: req.body.username , email: req.body.user_email, loved_one_email:req.body.partner_email,agree :req.body.agree  }), req.body.password, function(err, user){
         if(err){
         	// if there is a problem go back 
             console.log(err);
