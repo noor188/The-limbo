@@ -1,0 +1,99 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
+    </head>
+
+<body id="Fbody" onload="result_Single()">
+    <div id= "Full" >
+        <nav >
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu"  >
+                <li><a href="home1.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div style="text-align: center;" >
+
+            <div>
+                <p id="R_S" style="margin-top: 50px ; margin-bottom: 20px; font-size: 40px; font-weight: bold; "></p>
+            </div>
+
+            <div class="result_Img">
+                <img src="Image/quality.png" style="width:200px; height: 200px;">
+                <div id="q_s" class="centered"></div>
+            </div>
+
+            <div class="result_Img">
+                <img src="Image/acts.png" style="width:200px; height: 200px;">
+                <div id="a_s" class="centered"></div>
+            </div>
+
+            <div class="result_Img">
+                <img src="Image/words.png" style="width:200px; height: 200px;">
+                <div id="w_s" class="centered"></div>
+            </div>
+
+            <div class="result_Img">
+                <img src="Image/gifts.png" style="width:200px; height: 200px;">
+                <div id="g_s" class="centered"></div>
+            </div>
+
+            <div class="result_Img">
+                <img src="Image/physical.png" style="width:200px; height: 200px;">
+                <div id="p_s" class="centered"></div>
+            </div>
+
+            <div style="color:rgba(0, 0, 0, 0.500); font-size: 20px; font-weight: 100; margin-top: 30px; margin-bottom: 50px; margin-left: 200px; margin-right: 200px;" >
+               <span style="color:rgba(0, 0, 0, 0.540); font-size: 30px; font-weight: bold;">Interpreting and Using Your Profile Score:<br/><br/>
+               </span> 
+                The highest score indicates your primary language - 
+                how you really understand your partner’s expressions of love. 
+                It’s common to have two high scores (the highest score being 12), 
+                although one language tends to have a slight edge for most people. 
+                The lower scores in your profile indicate those languages you seldom 
+                use to communicate love and which probably don’t affect you on an 
+                emotional level in your relationship.
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Input").addEventListener("click",function(event){
+                if(document.getElementById("Input").value == "OFF")
+                {
+                    document.getElementById("Input").value = "ON"
+                    document.getElementById("Fbody").style.backgroundColor = "black";
+                }
+                else if(document.getElementById("Input").value == "ON")
+                {
+                    document.getElementById("Input").value = "OFF"
+                    document.getElementById("MB2").style.color = "black";
+                }
+            });
+        </script>
+      
+    </body>
+
+</html>
