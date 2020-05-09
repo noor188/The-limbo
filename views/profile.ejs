@@ -1,24 +1,27 @@
 <html lang="en" dir="ltr">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
         <link type="text/css" rel="stylesheet" href="/css/style.css">
-        <title>Contact</title>
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">	
     </head>
 
-    <body id="Fbody" class= "body">
-
-        <% if (!currentuser) { %>
-                       
+<body id="Fbody" class= "body"> 
+		<% if (!currentuser) { %>
+                         
             <% }else { %>
+
+            
             <div class="log_out">
                 <a href="/profile">Welcome  <%= currentuser.username %>  | </a>
                 <a href = "/logout"> Log out </a> 
             </div>   
                          
-        <% } %>  
+        <% } %> 
 
         <nav>
             <div id="dmswitch">Dark_Mode<br/>
@@ -30,8 +33,8 @@
           
             <label for="drop" class="toggle" >Menu</label>
             <input type="checkbox" id="drop" />
-            <ul class="menu"  >
-                <% if (!currentuser) { %>
+            <ul class="menu" >
+                 <% if (!currentuser) { %>
                 <li><a href="/" >HOME</a></li>                
                 <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
                 <li><a href="/CONTACT_US" >CONTACT US</a></li>                
@@ -40,56 +43,70 @@
                 <li><a href="/QUIZZ" >QUIZ</a></li>              
                 <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
                 <li><a href="/CONTACT_US" >CONTACT US</a></li>                
-                <% } %>                
+                <% } %> 
             </ul>
         </nav>
-        
-        <div class="middle">
-            <div class="container">
-                <div id="1" style="text-align:center; font-size:40px;
-                padding-top:0%; padding-bottom:2%;"> LET'S GET IN TOUCH 
+
+
+
+
+         
+        <div class="flexbox-container" >
+
+            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >
+                
+                <div class="Item_Inside_InMiddlePage_LeftSide">
+
+                    <P>user name : <a href="#"> <%= currentuser.username %> </a></P>
+                    <p>user email: <a href="#"> <%= currentuser.email %> </a> </p>
+                    <p>user loved one email : <a href="#">  <%= currentuser.loved_one_email %> </a> </p>
+                    <p>Words of affirmation score : <a href="#">  <%= currentuser.words_of_affirmation %> </a> </p>
+                    <p>Acts of service score : <a href="#">  <%= currentuser.acts_of_service %> </a> </p>
+                    <p>Receiving gifts score :<a href="#"> <%= currentuser.receiving_gifts %> </a> </p>
+                    <p>Quality time score :<a href="#">  <%= currentuser.receiving_gifts %> </a> </p>
+                    <p>Physical touch score :<a href="#">  <%= currentuser.receiving_gifts %> </a> </p>
+
+                                        
                 </div>
-                <form id="2" >
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Full Name..">
+            </div>         
+            
 
-                    <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="Your E-mail..">
-
-                    <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone" placeholder="Your Phone..">
-                            
-                    <label for="subject">Message</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
-                            
-                    <input type="submit" value="Send">
-                </form>
-            </div>
+            
+            
         </div>
-     
-        <div id="footer">
+                            
+                               
+        
 
-        </div>
+        
+
+        
+
+        <div id="footer"></div>
         <!-----------------Dark Mode----------------------->
         <script>
             document.getElementById("Input").addEventListener("click",function(event){
                 if(document.getElementById("Input").value == "OFF")
                 {
                     document.getElementById("Input").value = "ON"
-                    document.getElementById("1").style.color = "white";
-                    document.getElementById("2").style.color = "white";
+                    document.getElementById("ML").style.backgroundColor = "black";
+                    document.getElementById("MB1").style.backgroundColor = "black";
+                    document.getElementById("MB2").style.color = "white";
                     document.getElementById("Fbody").style.backgroundColor = "black";
                 }
                 else if(document.getElementById("Input").value == "ON")
                 {
                     document.getElementById("Input").value = "OFF"
+                    document.getElementById("ML").style.backgroundColor = "#778899";
                     document.getElementById("Fbody").style.backgroundColor = "#e6e6e6";
-                    document.getElementById("1").style.color = "black";
-                    document.getElementById("2").style.color = "black";
+                    document.getElementById("MB1").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB2").style.color = "black";
                 }
             });
         </script>
-
+      
     </body>
 
 </html>
+
+
