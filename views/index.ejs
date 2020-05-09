@@ -1,0 +1,226 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="/css/style.css">
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">	
+    </head>
+
+<body id="Fbody" class= "body"> 
+		<% if (!currentuser) { %>
+                         
+            <% }else { %>
+
+            
+            <div class="log_out">
+                <a href="#">Welcome  <%= currentuser.username %>  | </a>
+                <a href = "/logout"> Log out </a> 
+            </div>   
+                         
+        <% } %> 
+
+        <nav>
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu" >
+                 <% if (!currentuser) { %>
+                <li><a href="/" >HOME</a></li>                
+                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+                <% }else { %>
+                <li><a href="/" >HOME</a></li>  
+                <li><a href="/QUIZZ" >QUIZ</a></li>              
+                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
+                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+                <% } %> 
+            </ul>
+        </nav>
+
+
+
+
+         <% if (!currentuser) { %>
+        <div class="flexbox-container" >
+
+            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >
+                
+                <div class="Item_Inside_InMiddlePage_LeftSide">
+
+                    <!-- register -->  
+                    <div class="login-page"> 
+                        <div class="form"> 
+                            
+                            <!-----------------register-----------------------> 
+                            <form class="register-form" action="/register" method="POST">                    
+                                <!-- the form will send username/password/gender/user_email/partner_email/agree-->
+                                <!-- name -->
+                                <p>Register <br> * means required </p> 
+
+                                <div id= "info">
+                                    <label for="username">User name:</label>
+                                    <input type="text" id="username" placeholder="username" name="username" required>
+                                    <label for="Last">Password:</label>
+                                    <input type="password" id="Last" placeholder="password" name="password" required>
+                                </div>
+
+                                <!-- gender -->
+                                <div>
+                                    <label id="male">Male</label>
+                                    <input name="gender" type="radio" id = "male" value="male">
+                                    <label id="female">Female</label>
+                                    <input name="gender" type="radio" id = "female" value="female">
+                                </div>
+                                <br>
+                                <!-- email user -->
+                                <div>       
+                                    <label for="email">Your email:*</label>
+                                    <input id= "email" type="email" placeholder="email" required name="user_email"> 
+                                </div>
+                                <br>
+                                <!-- email other person-->
+                                <div>       
+                                    <label for="email1">Your loved one's email:*</label>
+                                    <input id= "email1" type="email" placeholder="email" required name="partner_email"> 
+                                </div>
+                                <br>
+                                <!-- agree -->
+                                <div>
+                                    <label for="agree">I agree to the terms and conditions* </label>
+                                    <input type="checkbox" id="agree" required name="agree">
+                                </div>
+                                <br>
+                                <div >
+                                    <button  class = "btn btn-success btn-xs active" type="submit">Create</button>
+                                    <!--
+                                    <button  class = "create" type="submit">Create</button> -->
+                                </div>
+                                <div>
+                                    <p class="message">Already Registered? <a href="#">Login</a></p>
+                                </div>
+
+                                
+                            </form>                    
+
+                            <!-----------------login-----------------------> 
+                            <form class="login-form" action="/login" method="POST">
+                                <p>Log in to start the quiz</p>
+                                <div class="info">
+                                    <input type="text" name="username" placeholder="username">
+                                    <input type="password" name="password" placeholder="password">
+                                    <button class="create">login</button>
+                                    <p class="message">Not Registered? <a href="#"> Register</a></p>
+                                </div>
+                                <!-----------------google sign in----------------------->  
+                                <div id="button_position">
+                                    <a href="./auth/google" >Sign in with google<img src="/Image/googleButton.png"></a>
+                                </div>                      
+                            </form>
+                        </div>     
+                    </div>
+
+                    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+                    <script type="text/javascript">
+                        $(".message a").click(function(){
+                            $("form").animate({height:"toggle", opacity:"toggle"}, "slow");
+                        });
+                    </script>                    
+                </div>
+            </div>         
+            
+
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_RightSide" >
+                <img id='M_R' src="Image/banner_3.jpg" /> 
+            </div>
+            
+        </div>
+                            
+        <% }else { %>                        
+        
+
+        <div class="flexbox-container" >
+
+            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >
+                
+                <div class="Item_Inside_InMiddlePage_LeftSide">
+
+                    <div id="p1" class="item item-1">
+                        Discover the secret that has helped millions of people strengthen and improve their relationships. Take the quiz to get started.
+                    </div>
+
+                    <div class="item item-2 Start_button_container">
+                        
+                        <input class="rounded_btn" type="button" value="START HERE" onClick="location.href='/QUIZZ'">
+                     
+                    </div>                    
+
+                    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+                    <script type="text/javascript">
+                        $(".message a").click(function(){
+                            $("form").animate({height:"toggle", opacity:"toggle"}, "slow");
+                        });
+                    </script>                    
+                </div>
+            </div>         
+            
+
+            <div class="Item_In_Middle_Of_Page Item_InMiddlePage_RightSide" >
+                <img id='M_R' src="Image/banner_3.jpg" /> 
+            </div>
+            
+        </div>
+
+        <% } %> 
+
+        <div id="MB1" class="middle-bottom">
+            
+            <img id="time" src="Image/time1.png" alt="Smiley face" onclick="change1() , time()" >
+            <img id="acts" src="Image/acts1.png" alt="Smiley face" onclick="change2() , acts()" >
+            <img id="words" src="Image/words1.png" alt="Smiley face" onclick="change3() , words()" >
+            <img id="gifts" src="Image/gifts1.png" alt="Smiley face" onclick="change4() , gifts()" >   
+
+        </div>
+        <P  id="MB2" class="p2">
+            Improve Your Relationships One Language At A Time
+        </P>
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Input").addEventListener("click",function(event){
+                if(document.getElementById("Input").value == "OFF")
+                {
+                    document.getElementById("Input").value = "ON"
+                    document.getElementById("ML").style.backgroundColor = "black";
+                    document.getElementById("MB1").style.backgroundColor = "black";
+                    document.getElementById("MB2").style.color = "white";
+                    document.getElementById("Fbody").style.backgroundColor = "black";
+                }
+                else if(document.getElementById("Input").value == "ON")
+                {
+                    document.getElementById("Input").value = "OFF"
+                    document.getElementById("ML").style.backgroundColor = "#778899";
+                    document.getElementById("Fbody").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB1").style.backgroundColor = "#e6e6e6";
+                    document.getElementById("MB2").style.color = "black";
+                }
+            });
+        </script>
+      
+    </body>
+
+</html>
+
+

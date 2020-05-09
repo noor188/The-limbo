@@ -8,7 +8,12 @@ var UserSchema= new mongoose.Schema({
 	gender: String,
 	email: String,
 	loved_one_email:String,
-	agree: String,
+	agree: String,	
+	words_of_affirmation: Number,
+	acts_of_service: Number,
+	receiving_gifts: Number,
+	quality_time: Number,
+	physical_touch : Number,
 	googleId: { type: String },
   	googleProfile: { type: Object },
   	googleAccessToken: {type: String}

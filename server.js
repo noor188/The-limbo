@@ -35,6 +35,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req,res,next){
+  res.locals.currentuser = req.user;
+  next();
+});
+
 /* conver user object into id that is saved in the session */
 passport.serializeUser(function(user, done) {
     done(null, user._id);
@@ -50,12 +55,9 @@ passport.deserializeUser(function(userId, done) {
 
 
 app.get("/", function(req,res){
-	res.render("home");
+	res.render("index");
 });
 
-app.get("/secret", isLoggedIn, function(req,res){
-	res.render("secret");
-});
 
 app.get("/QUIZZ", isLoggedIn, function(req,res){
     res.render("QUIZZ");
@@ -65,17 +67,11 @@ app.get("/RELATIONSHIP_ISSUES", function(req,res){
     res.render("RELATIONSHIP_ISSUES");
 });
 
-app.get("/RELATIONSHIP_ISSUES_secret" , isLoggedIn, function(req,res){
-    res.render("RELATIONSHIP_ISSUES_secret");
-});
 
 app.get("/CONTACT_US", function(req,res){
     res.render("CONTACT_US");
 });
 
-app.get("/CONTACT_US_secret" , isLoggedIn, function(req,res){
-    res.render("CONTACT_US_secret");
-});
 
 // auth routs
 // show sign up form
@@ -91,7 +87,7 @@ app.post("/register", function(req, res){
 	// pass user object then the password separetly  
 	//if everthing goes well it will return  a new user 
 	//	that has everything inside of it (user name + password)
-    User.register(new User({username: req.body.username , email: req.body.user_email, loved_one_email:req.body.partner_email,agree :req.body.agree  }), req.body.password, function(err, user){
+    User.register(new User({username: req.body.username , email: req.body.user_email, loved_one_email:req.body.partner_email,agree :req.body.agree}), req.body.password, function(err, user){
         if(err){
         	// if there is a problem go back 
             console.log(err);
@@ -102,7 +98,7 @@ app.post("/register", function(req, res){
         // change local to google !!! with other tweks 
         passport.authenticate("local")(req, res, function(){
         // here go to what ever page you want
-           res.redirect("/secret");
+           res.redirect("/");
         });
     });
 });
@@ -118,7 +114,7 @@ app.get("/login" , function(req,res){
 // takes username and password from the body and compare
 // to the one in db 
 app.post("/login", passport.authenticate("local", {
-    successRedirect: "/secret",
+    successRedirect: "/",
     failureRedirect: "/"
 }) ,function(req, res){
 });
@@ -166,7 +162,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
-    res.redirect('/secret');
+    res.redirect('/');
   });
 
 app.get("/logout", function(req, res){

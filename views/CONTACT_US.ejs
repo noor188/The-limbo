@@ -9,6 +9,17 @@
     </head>
 
     <body id="Fbody" class= "body">
+
+        <% if (!currentuser) { %>
+                       
+            <% }else { %>
+            <div class="log_out">
+                <a href="#">Welcome  <%= currentuser.username %>  | </a>
+                <a href = "/logout"> Log out </a> 
+            </div>   
+                         
+        <% } %>  
+
         <nav>
             <div id="dmswitch">Dark_Mode<br/>
                 <label class="switch">
@@ -20,9 +31,16 @@
             <label for="drop" class="toggle" >Menu</label>
             <input type="checkbox" id="drop" />
             <ul class="menu"  >
+                <% if (!currentuser) { %>
                 <li><a href="/" >HOME</a></li>                
                 <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
-                <li><a href="/CONTACT_US" >CONTACT US</a></li>
+                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+                <% }else { %>
+                <li><a href="/" >HOME</a></li>  
+                <li><a href="/QUIZZ" >QUIZ</a></li>              
+                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
+                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+                <% } %>                
             </ul>
         </nav>
         
