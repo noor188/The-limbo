@@ -4,12 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
-        <link type="text/css" rel="stylesheet" href="/css/style.css">
-        <title>Contact</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
     </head>
 
-    <body id="Fbody" class= "body">
-        <nav>
+    <body id="Fbody" >
+        <div id= "Full">
+            <nav >
             <div id="dmswitch">Dark_Mode<br/>
                 <label class="switch">
                     <input type="checkbox" id="Input" value="OFF" >
@@ -20,18 +22,19 @@
             <label for="drop" class="toggle" >Menu</label>
             <input type="checkbox" id="drop" />
             <ul class="menu"  >
-                <li><a href="/" >HOME</a></li>                
-                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
-                <li><a href="/CONTACT_US" >CONTACT US</a></li>
+                <li><a href="home1.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
             </ul>
-        </nav>
+            </nav>
         
-        <div class="middle">
+            <div>
             <div class="container">
                 <div id="1" style="text-align:center; font-size:40px;
-                padding-top:0%; padding-bottom:2%;"> LET'S GET IN TOUCH 
+                margin-top:3%; margin-bottom:2%;"> LET'S GET IN TOUCH 
                 </div>
-                <form id="2" >
+                <formm id="2" >
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Full Name..">
 
@@ -47,11 +50,10 @@
                     <input type="submit" value="Send">
                 </form>
             </div>
+            </div>
         </div>
      
-        <div id="footer">
-
-        </div>
+        <div id="footer"></div>
         <!-----------------Dark Mode----------------------->
         <script>
             document.getElementById("Input").addEventListener("click",function(event){
