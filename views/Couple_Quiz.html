@@ -1,0 +1,73 @@
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="client.js"></script>
+        <title></title>
+    </head>
+
+<body id="Fbody" onload="window.localStorage.clear();">
+    <div id= "Full">
+        <nav >
+            <div id="dmswitch">Dark_Mode<br/>
+                <label class="switch">
+                    <input type="checkbox" id="Input" value="OFF" >
+                    <span class="slider round"></span>
+                </label>
+            </div>
+          
+            <label for="drop" class="toggle" >Menu</label>
+            <input type="checkbox" id="drop" />
+            <ul class="menu"  >
+                <li><a href="home1.html" >HOME</a></li>
+                <li><a href="QUIZZ.html" >QUIZ</a></li>
+                <li><a href="RELATIONSHIP_ISSUES.html" >RELATIONSHIP ISSUES</a></li>
+                <li><a href="CONTACT_US.html" >CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div style="text-align: center;" >
+
+            <div>
+                <p style="margin-top: 50px ; margin-bottom: 20px; font-size: 40px; font-weight: bold; ">It’s more meaningful to me when…</p>
+            </div>
+
+            <div >
+                <button id="Q1" class="rounded_btn_Quiz" onClick="quiz_couple(1)">I receive a loving note/text/email for no special reason from my loved one.</button>
+            </div>
+
+            <div>
+                <button id="Q2" class="rounded_btn_Quiz" onClick="quiz_couple(2)">my partner and I hug.</button>
+            </div>
+
+            <div>
+                <button id="percent" class="rounded_btn_percent" type="text">0%</button>
+            </div>     
+
+        </div>
+
+    </div>
+
+        <div id="footer"></div>
+        <!-----------------Dark Mode----------------------->
+        <script>
+            document.getElementById("Input").addEventListener("click",function(event){
+                if(document.getElementById("Input").value == "OFF")
+                {
+                    document.getElementById("Input").value = "ON"
+                    document.getElementById("Fbody").style.backgroundColor = "black";
+                }
+                else if(document.getElementById("Input").value == "ON")
+                {
+                    document.getElementById("Input").value = "OFF"
+                    document.getElementById("MB2").style.color = "black";
+                }
+            });
+        </script>
+      
+    </body>
+
+</html>
