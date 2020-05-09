@@ -75,6 +75,26 @@ app.get("/CONTACT_US", function(req,res){
     res.render("CONTACT_US");
 });
 
+app.get("/Couple_Quiz",isLoggedIn, function(req,res){
+  res.render("Couple_Quiz");
+});
+
+app.get("/Loading",isLoggedIn, function(req,res){
+  res.render("Loading");
+});
+
+app.get("/Result_S",isLoggedIn, function(req,res){
+  res.render("Result_S");
+});
+
+app.get("/Single_Quiz",isLoggedIn, function(req,res){
+  res.render("Single_Quiz");
+});
+
+
+app.get("/Result_C",isLoggedIn, function(req,res){
+  res.render("Result_C");
+});
 
 // auth routs
 // show sign up form

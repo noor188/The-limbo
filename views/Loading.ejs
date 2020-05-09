@@ -1,16 +1,17 @@
 <html lang="en" dir="ltr">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="client.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
-        <link type="text/css" rel="stylesheet" href="/css/style.css">
-        <title>Contact</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+
+        <title></title>
     </head>
 
-    <body id="Fbody" class= "body">
-
-        <% if (!currentuser) { %>
+<body id="Fbody" onload=" C_S(), setTimeout(function(){if(choose == 1){window.location = 'Result_C';}else if (choose == 2){window.location = 'Result_S';}}, 1000)" >
+    <% if (!currentuser) { %>
                        
             <% }else { %>
             <div class="log_out">
@@ -18,9 +19,9 @@
                 <a href = "/logout"> Log out </a> 
             </div>   
                          
-        <% } %>  
-
-        <nav>
+        <% } %> 
+    <div id= "Full">
+        <nav >
             <div id="dmswitch">Dark_Mode<br/>
                 <label class="switch">
                     <input type="checkbox" id="Input" value="OFF" >
@@ -40,53 +41,49 @@
                 <li><a href="/QUIZZ" >QUIZ</a></li>              
                 <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
                 <li><a href="/CONTACT_US" >CONTACT US</a></li>                
-                <% } %>                
+                <% } %> 
             </ul>
         </nav>
-        
+
         <div style="text-align: center;" >
 
-                <div>
-                    <p style="margin-top: 50px ; margin-bottom: 20px; font-size: 40px; font-weight: bold; ">It’s more meaningful to me when…</p>
+            <section class="wrapper">
+                <div class="spinner">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
                 </div>
-    
-                <div>
-                    <button id="Q1" class="rounded_btn_Quiz" type="text" onClick="quiz_single(1)">someone I love sends me a loving note/text/email for no special reason.</button>
-                </div>
-    
-                <div>
-                    <button id="Q2" class="rounded_btn_Quiz" type="text" onClick="quiz_single(2)">I hug someone I love.</button>
-                </div>
-    
-                <div>
-                    <button id="percent" class="rounded_btn_percent" type="text">0%</button>
-                </div>          
-    
-        </div>
-     
-        <div id="footer">
+            </section>
+            
+
+            <div>
+                <button id="percent" style="margin-top: 300px;" class="rounded_btn_percent" type="text">100%</button>
+            </div> 
 
         </div>
+    </div>
+
+        <div id="footer"></div>
         <!-----------------Dark Mode----------------------->
         <script>
             document.getElementById("Input").addEventListener("click",function(event){
                 if(document.getElementById("Input").value == "OFF")
                 {
                     document.getElementById("Input").value = "ON"
-                    document.getElementById("1").style.color = "white";
-                    document.getElementById("2").style.color = "white";
                     document.getElementById("Fbody").style.backgroundColor = "black";
                 }
                 else if(document.getElementById("Input").value == "ON")
                 {
                     document.getElementById("Input").value = "OFF"
-                    document.getElementById("Fbody").style.backgroundColor = "#e6e6e6";
-                    document.getElementById("1").style.color = "black";
-                    document.getElementById("2").style.color = "black";
+                    document.getElementById("MB2").style.color = "black";
                 }
             });
         </script>
-
+      
     </body>
 
 </html>
