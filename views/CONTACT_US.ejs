@@ -8,61 +8,66 @@
         <title>Contact</title>
     </head>
 
-    <body id="Fbody" class= "body">
+    <body id="Fbody" >
+    	<div id= "Full">
+	        <% if (!currentuser) { %>
+	                       
+	            <% }else { %>
+	            <div class="log_out">
+	                <a href="/profile">Welcome  <%= currentuser.username %>  | </a>
+	                <a href = "/logout"> Log out </a> 
+	            </div>   
+	                         
+	        <% } %>  
 
-        <% if (!currentuser) { %>
-                       
-            <% }else { %>
-            <div class="log_out">
-                <a href="/profile">Welcome  <%= currentuser.username %>  | </a>
-                <a href = "/logout"> Log out </a> 
-            </div>   
-                         
-        <% } %>  
+	        <nav>
+	            <div id="dmswitch">Dark_Mode<br/>
+	                <label class="switch">
+	                    <input type="checkbox" id="Input" value="OFF" >
+	                    <span class="slider round"></span>
+	                </label>
+	            </div>
+	          
+	            <label for="drop" class="toggle" >Menu</label>
+	            <input type="checkbox" id="drop" />
+	            <ul class="menu"  >
+	                <% if (!currentuser) { %>
+	                <li><a href="/" >HOME</a></li>                
+	                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
+	                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+	                <% }else { %>
+	                <li><a href="/" >HOME</a></li>  
+	                <li><a href="/QUIZZ" >QUIZ</a></li>              
+	                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
+	                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
+	                <% } %>                
+	            </ul>
+	        </nav>
+	        
+	        <div>
+	        <div class="container">
+	            <div id="1" style="text-align:center; font-size:40px;
+                margin-top:3%; margin-bottom:2%;"> LET'S GET IN TOUCH 
+                </div>
+	            <form id="2" >
+	                <label for="name">Full Name</label>
+	                <input type="text" id="name" name="name" placeholder="Your Full Name..">
 
-        <nav>
-            <div id="dmswitch">Dark_Mode<br/>
-                <label class="switch">
-                    <input type="checkbox" id="Input" value="OFF" >
-                    <span class="slider round"></span>
-                </label>
-            </div>
-          
-            <label for="drop" class="toggle" >Menu</label>
-            <input type="checkbox" id="drop" />
-            <ul class="menu"  >
-                <% if (!currentuser) { %>
-                <li><a href="/" >HOME</a></li>                
-                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>
-                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
-                <% }else { %>
-                <li><a href="/" >HOME</a></li>  
-                <li><a href="/QUIZZ" >QUIZ</a></li>              
-                <li><a href="/RELATIONSHIP_ISSUES" >RELATIONSHIP ISSUES</a></li>                
-                <li><a href="/CONTACT_US" >CONTACT US</a></li>                
-                <% } %>                
-            </ul>
-        </nav>
-        
-        <div style="text-align: center;" >
+	                <label for="email">E-mail</label>
+	                <input type="text" id="email" name="email" placeholder="Your E-mail..">
 
-                <div>
-                    <p style="margin-top: 50px ; margin-bottom: 20px; font-size: 40px; font-weight: bold; ">It’s more meaningful to me when…</p>
-                </div>
-    
-                <div>
-                    <button id="Q1" class="rounded_btn_Quiz" type="text" onClick="quiz_single(1)">someone I love sends me a loving note/text/email for no special reason.</button>
-                </div>
-    
-                <div>
-                    <button id="Q2" class="rounded_btn_Quiz" type="text" onClick="quiz_single(2)">I hug someone I love.</button>
-                </div>
-    
-                <div>
-                    <button id="percent" class="rounded_btn_percent" type="text">0%</button>
-                </div>          
-    
-        </div>
+	                <label for="phone">Phone</label>
+	                <input type="text" id="phone" name="phone" placeholder="Your Phone..">
+	                        
+	                <label for="subject">Message</label>
+	                <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+	                        
+	                <input type="submit" value="Send">
+	            </form>
+	        </div>
+	        </div>
+	    </div>
+	        
      
         <div id="footer">
 

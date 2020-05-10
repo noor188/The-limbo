@@ -11,16 +11,12 @@
     </head>
 
 <body id="Fbody" class= "body"> 
-		<% if (!currentuser) { %>
-                         
-            <% }else { %>
-
-            
+		<% if (!currentuser) { %>                         
+            <% }else { %>            
             <div class="log_out">
                 <a href="/profile">Welcome  <%= currentuser.username %>  | </a>
                 <a href = "/logout"> Log out </a> 
-            </div>   
-                         
+            </div>                            
         <% } %> 
 
         <nav>
@@ -46,17 +42,10 @@
                 <% } %> 
             </ul>
         </nav>
-
-
-
-
          
         <div class="flexbox-container" >
-
-            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >
-                
+            <div id="ML" class="Item_In_Middle_Of_Page Item_InMiddlePage_LeftSide" >                
                 <div class="Item_Inside_InMiddlePage_LeftSide">
-
                     <P>user name : <a href="#"> <%= currentuser.username %> </a></P>
                     <p>user email: <a href="#"> <%= currentuser.email %> </a> </p>
                     <p>user loved one email : <a href="#">  <%= currentuser.loved_one_email %> </a> </p>
@@ -64,23 +53,10 @@
                     <p>Acts of service score : <a href="#">  <%= currentuser.acts_of_service %> </a> </p>
                     <p>Receiving gifts score :<a href="#"> <%= currentuser.receiving_gifts %> </a> </p>
                     <p>Quality time score :<a href="#">  <%= currentuser.receiving_gifts %> </a> </p>
-                    <p>Physical touch score :<a href="#">  <%= currentuser.receiving_gifts %> </a> </p>
-
-                                        
+                    <p>Physical touch score :<a href="#">  <%= currentuser.receiving_gifts %> </a> </p>                                       
                 </div>
-            </div>         
-            
-
-            
-            
-        </div>
-                            
-                               
-        
-
-        
-
-        
+            </div>           
+        </div>       
 
         <div id="footer"></div>
         <!-----------------Dark Mode----------------------->
@@ -103,10 +79,8 @@
                     document.getElementById("MB2").style.color = "black";
                 }
             });
-        </script>
-      
+        </script>      
     </body>
-
 </html>
 
 

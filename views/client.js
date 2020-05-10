@@ -1134,7 +1134,7 @@ function quiz_single(Q) {
   }
   else if (Single_QNumber == 31) {
     if(Q == 1) {
-      window.location = 'loading.html';
+      window.location = '/loading';
       ++Single_count_P;
       choose = 2;
       window.localStorage.setItem('c', choose);
@@ -1145,7 +1145,7 @@ function quiz_single(Q) {
       window.localStorage.setItem('s_p', Single_count_P);
     }
     else if(Q == 2) {
-      window.location = 'loading.html';
+      window.location = '/loading';
       ++Single_count_W;
       choose = 2;
       window.localStorage.setItem('c', choose);
