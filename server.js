@@ -35,8 +35,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req,res,next){
+app.use(function(req,res,next){	
   res.locals.currentuser = req.user;
+  console.log(req.user);
+  console.log("use");
   next();
 });
 
@@ -152,7 +154,8 @@ var googleStrategy = new GoogleStrategy({
   callbackURL: "http://localhost:3000/auth/google/callback"
 }, function(accessToken, refreshToken, profile, done) {
   // find or create user from the database based on googleId and googleDisplayName
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
+  User.findOrCreate({ googleId: profile.id , username: profile.displayName}, function (err, user) {
+
     if(!err){
       //save google profile and access token to the user object
       user.googleProfile = profile;
@@ -160,8 +163,11 @@ var googleStrategy = new GoogleStrategy({
       user.save(function(err){
         done(err, user);
       });
+
+
     }
     else{
+      res.locals.currentuser = req.user; 
       done(err, user);
     } 
   });}
@@ -185,7 +191,10 @@ app.get('/auth/google',
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
-    res.redirect('/');
+  	console.log(req.user);
+    console.log("google");
+    res.locals.currentuser = req.user;
+    res.redirect('/');    
   });
 
 app.get("/logout", function(req, res){
