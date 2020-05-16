@@ -2,19 +2,25 @@ Thanks for your message!
 
 <?php
 	
+	if (isset($_POST["submuit"])){}
 	$userName 		= $_POST['name'];
     $userEmail	 	= $_POST['email'];
-    $userPhone	 	= $_POST['phone'];
+    $$userEmail	 	= $_POST['phone'];
 	$userMessage 		= $_POST['subject'];
+	$msg = $_POST["msg"];
 
 	$to 			= "aminchamsaz@gmail.com";
-	$subject 		= "Email from my website";
-	$body 			= "Information Submitted:";
+	$subject 		= "Email from my website";	
+	$message = "name: ".$userName."\n"."userEmail".$userEmail."\n"."userEmail: ".$userEmail."\n"."Wroe the following: "."\n\n".$userMessage;
+	$header= "From: ".$email;
 
-	$body .= "\r\n Name: " . $userName;
-    $body .= "\r\n Email: " . $userEmail;
-    $body .= "\r\n Phone: " . $userPhone;
-	$body .= "\r\n Message: " . $userMessage;
 
-	mail($to, $subject, $body);
+	if(mail($to,$suject,$message,$header)){
+		echo "<h1>Sent successfully! thank you"." ".$userName."We will contact you shortly!</h1>";
+	}
+	else {
+		echo "Something went wrong!"
+	}
+
+}
 ?>

@@ -37,8 +37,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req,res,next){	
   res.locals.currentuser = req.user;
-  console.log(req.user);
-  console.log("use");
+  
   next();
 });
 
@@ -191,8 +190,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
-  	console.log(req.user);
-    console.log("google");
+  	
     res.locals.currentuser = req.user;
     res.redirect('/');    
   });
